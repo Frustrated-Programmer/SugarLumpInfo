@@ -1,5 +1,5 @@
 # Sugar Lump Info
-This is a mod that removes all the useless information from the standard tooltip and allows you to view more important information instead as well as giving you additional information on a second page.  
+This is a mod that removes all the useless information from the standard tooltip and allows you to view more important information instead, as well as giving you additional information on a second page.  
 
 <img src="Preview.png" style="width:50%">
 
