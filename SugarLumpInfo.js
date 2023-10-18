@@ -11,7 +11,63 @@
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
- You should have received a copy of the GNU General Public License
+ You should have received a copy of the GNU General Public
+ function pushTip(text, array, val){
+                if(array.length > 0){
+                    let types = {};
+                    let crates = document.createElement("div");
+                    crates.style.display = "block";
+                    crates.style.position = "relative";
+                    crates.style.width = (array.length * 20) + "px";
+                    crates.style.height = "30px";
+                    for(let i = 0; i < array.length; i++){
+                        let upgrade = array[i];
+                        types[upgrade.type] = types[upgrade.type] || 0;
+                        types[upgrade.type]++;
+                        let crate = document.createElement("div");
+                        if(upgrade.icon[2]){
+                            crate.style.backgroundImage = "url('" + upgrade.icon[2].replace(/'/g, "\\'") + "');";
+                        }
+                        else crate.style.backgroundImage = `url(${"https://cdn.dashnet.org/cookieclicker/img/icons.png?v=2.052".replace(/'/g, "\\'")})`;
+                        crate.style.backgroundPositionX = `${(-upgrade.icon[0] * 48)}px`;
+                        crate.style.backgroundPositionY = `${(-upgrade.icon[1] * 48)}px`;
+                        if(upgrade.type === "Dragon Aura" && false){
+                            crate.style.backgroundPositionX = `-5px`;
+                            crate.style.backgroundPositionY = `-9px`;
+                            crate.style.backgroundSize = "550px";
+                            crate.style.backgroundImage = "url('https://cdn.dashnet.org/cookieclicker/img/dragon.png?v=2.052')";
+                        }
+                        crate.style.position = "absolute";
+                        crate.style.top = "-10px";
+                        crate.style.left = ((i * 30) - 10) + "px";
+                        crate.style.margin = "0";
+                        crate.classList.add("upgrade");
+                        //God background:
+                        //"https://cdn.dashnet.org/cookieclicker/img/spellBG.png"
+                        crate.classList.add("crate");
+                        if(upgrade.pool === "prestige"){
+                            crate.classList.add("heavenly");
+                        }
+                        crate.classList.add("enabled");
+                        crate.style.scale = "0.4";
+                        crates.appendChild(crate);
+                    }
+                    let txts = [];
+                    for(let i in types){
+                        txts.push(`<b>${types[i]}</b> ${i}${types[i] > 1 ? "s" : ""}`);
+                    }
+                    let txt = "";
+                    for(let i = 0; i < txts.length; i++){
+                        if(i + 1 === txts.length && txt.length) txt += ", and ";
+                        else if(txt) txt += ", ";
+                        txt += txts[i];
+                    }
+                    tips.push(`Due to ${txt}, your sugar lump's ${text} time has been reduced by <b>${Game.sayTime((val / 1000) * Game.fps, -1)}</b><br>${crates.outerHTML}`);
+                }
+            }
+
+ pushTip("mature", upgradesReducingMature, ((hour * 20) - lumpMatureAge));
+ pushTip("ripen", upgradesReducingRiping, ((hour * 23) - lumpRipeAge));
  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  **/
 class LumpInfoClass{
@@ -263,12 +319,12 @@ class LumpInfoClass{
                         else if(txt) txt += ", ";
                         txt += txts[i];
                     }
-                    tips.push(`Due to ${txt}, your sugar lump's ${text} time has been reduced by <b>${Game.sayTime((((hour * 23) - val) / 1000) * Game.fps, -1)}</b><br>${crates.outerHTML}`);
+                    tips.push(`Due to ${txt}, your sugar lump's ${text} time has been reduced by <b>${Game.sayTime((val / 1000) * Game.fps, -1)}</b><br>${crates.outerHTML}`);
                 }
             }
 
-            pushTip("mature", upgradesReducingMature, lumpMatureAge);
-            pushTip("ripen", upgradesReducingRiping, lumpRipeAge);
+            pushTip("mature", upgradesReducingMature, ((hour * 20) - lumpMatureAge));
+            pushTip("ripen", upgradesReducingRiping, ((hour * 23) - lumpRipeAge));
 
             let ul = document.createElement("ul");
             ul.style.textAlign = "left";

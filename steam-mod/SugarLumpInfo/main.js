@@ -271,12 +271,12 @@ class LumpInfoClass{
                         else if(txt) txt += ", ";
                         txt += txts[i];
                     }
-                    tips.push(`Due to ${txt}, your sugar lump's ${text} time has been reduced by <b>${Game.sayTime((((hour * 23) - val) / 1000) * Game.fps, -1)}</b><br>${crates.outerHTML}`);
+                    tips.push(`Due to ${txt}, your sugar lump's ${text} time has been reduced by <b>${Game.sayTime((val / 1000) * Game.fps, -1)}</b><br>${crates.outerHTML}`);
                 }
             }
 
-            pushTip("mature", upgradesReducingMature, lumpMatureAge);
-            pushTip("ripen", upgradesReducingRiping, lumpRipeAge);
+            pushTip("mature", upgradesReducingMature, ((hour * 20) - lumpMatureAge));
+            pushTip("ripen", upgradesReducingRiping, ((hour * 23) - lumpRipeAge));
 
             let ul = document.createElement("ul");
             ul.style.textAlign = "left";
