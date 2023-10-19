@@ -185,7 +185,7 @@ class LumpInfoClass{
                 "Sugar lumps are delicious and may be used as currency for all sorts of things.",
                 "Once a sugar lump is harvested, another one will start growing in its place.",
                 "Note that sugar lumps keep growing when the game is closed.",
-                "Only the first Sugar lump harvested online can have a special types.",
+                "Only the first Sugar lump harvested offline can have a special types.",
                 "You need 55 sugar lumps to upgrade a building from 0 to 10"
             ];
             let upgradesReducingMature = [];
