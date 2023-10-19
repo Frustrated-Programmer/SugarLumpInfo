@@ -40,10 +40,12 @@ This is a just passion project of mine. These are my ideas for how to improve. B
 * Add a setting to temp disable the mod, so users can compare between using and not using it.
 * Possibly add a page in the stats, that let users see what the probabilities are for getting Sugar Lumps are depending on what auras/upgrades they use
 
-# Check out my OTHER mod!
+# Check out my OTHER mods!
 
 ## <a href="https://github.com/Frustrated-Programmer/BuildingSorter">Building Sorter</a>
-<a href="https://github.com/Frustrated-Programmer/BuildingSorter"><img src="BuildingSorterPreview.gif"></a>
+A simple mod that allows you to sort the buildings on the left, a variety of sorters are at your disposal and connections with other popular mods!<br>
+<a href="https://github.com/Frustrated-Programmer/BuildingSorter"><img src="BuildingSorterPreview.gif" style="width: 50%"></a>
 
 ## <a href="https://github.com/Frustrated-Programmer/ChartingMutations">Charting Mutations:</a>
+Have you ever had to open the wiki to look at how you grow a certain crop? Is it frustrating that to play the Garden you have to memorize crop mutations? Well this mod solves all of that by _showing_ you how to grow every crop!<br>
 <a href="https://github.com/Frustrated-Programmer/ChartingMutations"><img src="ChartingMutationsPreview.png" style="width: 50%"></a>
