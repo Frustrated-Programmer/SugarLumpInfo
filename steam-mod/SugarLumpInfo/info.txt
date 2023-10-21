@@ -7,6 +7,6 @@
 	"GameVersion": 2.052,
 	"Date": "10/17/2023",
 	"Dependencies": [],
-	"Disabled": 0
+	"Disabled": 0,
     "AllowSteamAchievs": 1
 }
